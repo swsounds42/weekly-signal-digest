@@ -1,0 +1,36 @@
+# Two imaginary identities, for demo + tests.
+# Real usage: one row per person (or team), one or more interests set.
+
+- name: Jane the Platform PM
+  slack_channel: "#jane-digest"
+  max_items_per_section: 5
+  interests:
+    terms:
+      - attribution
+      - developer tooling
+      - platform engineering
+      - serverless
+    github_repos:
+      - anthropic/claude-code
+      - vercel/next.js
+    rss_feeds:
+      - https://lennysnewsletter.com/feed
+    exclude_terms:
+      - crypto
+      - web3
+
+- name: Raj the RevOps Director
+  slack_channel: "#raj-digest"
+  max_items_per_section: 4
+  interests:
+    terms:
+      - revops
+      - salesforce
+      - hubspot
+      - pipeline forecasting
+      - B2B sales
+    github_repos: []
+    rss_feeds:
+      - https://www.saastr.com/feed/
+    exclude_terms:
+      - crypto

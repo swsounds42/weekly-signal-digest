@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "weekly-signal-digest"
+version = "0.1.0"
+description = "Per-identity Monday-morning briefing pipeline — public signal sources, no CRM required."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Sam Warren", email = "samuel.a.warren@gmail.com" }]
+keywords = ["digest", "signals", "slack", "revops", "rss", "hacker-news"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Communications",
+]
+dependencies = [
+  "pyyaml>=6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+signal-digest = "signal_digest.cli:main"
+
+[project.urls]
+Homepage   = "https://samwarren.io/projects/target-account-news-agent"
+Repository = "https://github.com/swsounds42/weekly-signal-digest"
+Issues     = "https://github.com/swsounds42/weekly-signal-digest/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["signal_digest"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
